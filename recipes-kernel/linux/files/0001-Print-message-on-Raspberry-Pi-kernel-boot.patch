@@ -1,0 +1,13 @@
+diff --git a/init/main.c b/init/main.c
+index c787e94cc..53e4c2052 100644
+--- a/init/main.c
++++ b/init/main.c
+@@ -904,6 +904,8 @@ void start_kernel(void)
+ 	smp_prepare_boot_cpu();	/* arch-specific boot-cpu hooks */
+ 	boot_cpu_hotplug_init();
+ 
++	printk(KERN_NOTICE "Custom patch: Raspberry Pi kernel has booted!\n");
++
+ 	pr_notice("Kernel command line: %s\n", saved_command_line);
+ 	/* parameters may set static keys */
+ 	jump_label_init();

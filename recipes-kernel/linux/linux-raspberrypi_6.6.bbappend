@@ -1,7 +1,9 @@
-
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
 SRC_URI:remove:raspberrypi4-64-custom = "git://github.com/raspberrypi/linux.git;name=machine;branch=${LINUX_RPI_BRANCH};protocol=https"
 SRC_URI:prepend:raspberrypi4-64-custom = "git://github.com/jerrysun0303/linux-raspberrypi-custom.git;name=machine;branch=${LINUX_RPI_BRANCH};protocol=https"
+SRC_URI:append:raspberrypi4-64-custom = " file://0001-Print-message-on-Raspberry-Pi-kernel-boot.patch"
+
 
 LINUX_VERSION:raspberrypi4-64-custom ?= "6.6.47"
 LINUX_RPI_BRANCH:raspberrypi4-64-custom ?= "rpi-custom-6.6.y"
