@@ -5,3 +5,4 @@ include recipes-core/images/rpi-test-image.bb
 IMAGE_INSTALL:append = " xserver-xorg xinit xterm matchbox-wm xf86-video-fbdev"
 
 IMAGE_INSTALL += "imagemagick"
+IMAGE_INSTALL:append = " util-linux"
